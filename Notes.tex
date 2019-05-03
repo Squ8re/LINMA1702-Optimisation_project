@@ -4,8 +4,12 @@
 \usepackage{lmodern}
 \usepackage[a4paper]{geometry}
 \usepackage{babel}
+\usepackage{enumitem}		% Liste enchainée
+\usepackage{amsmath}		% Math
+\usepackage{amssymb}		% Math
 \begin{document}
 \title{Notes et infos}
+\author{DAVID Amadéo}
 \maketitle
 \section{Ce qui coule de source}
 \subsection{Hypothèses}
@@ -32,21 +36,57 @@ Données fournies :
 	\item
 		Constante de proportionnalité ($\alpha$ dans l'équation).
 	\item
-		Débits maximaux extractibles aux points d'approvisionnement (notons le $D_(c,max)$).
+		Débits maximaux extractibles aux points d'approvisionnement.
 	\item 
 		Le coût des débits d'extraction.
 	\item 
-		Les valeurs minimales et maximales du débit en chaque point de consommation.
+		Les valeurs minimales (notées $D_{c,min}$) et maximales (notées $D_{c,max}$) du débit en chaque point de consommation.
 	\item 
 		Le prix facturé aux différents points de consommation.
+	\item 
+		La matrice d'incidence des points de consommation n'est pas fournie mais peut être calculée facilement et est notée $A_c$.
 \end{itemize}
+
 \section{Réponses}
 \begin{enumerate}
-	\item 
-		L'expression $A^T h$ représente les dénivelés entre les conduites.
-		L'expression $Af$ représente elle le débit total aux noeuds.
-		Notons que $Af$ a comme contrainte d'être plus petit ou égal à $D_(c,max)$.
-	\item 
-		
+	\item Analyse d'un réseau existant
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item 
+			L'expression $A^T h$ représente les dénivelés entre les conduites.
+			L'expression $Af$ représente elle le débit total aux noeuds.
+			Notons que $Af$ a comme contrainte d'être plus petit ou égal à $D_{c,max}$ et plus grand ou égal à $D_{c,min}$.
+		\item 
+			Démonstration :
+			
+			Un ensemble est défini comme polyèdre si et seulement si c'est un sous ensemble de $R^n$ qui peut être défini comme l'intersection d'un nombre fini de demi-espace de $R^n$. Autrement dit $$P=\left[x \in R^n |Ax\geq b\right].$$
+			
+			Dans notre cas, l'ensemble $P$ peut être vu comme l'intersection des deux demi-espaces $P_c\geq D_{c,min}$ et $P_c\leq D_{c,max}$.
+			Cet ensemble est donc bien un polyèdre.
+			
+			Vérification d'un profil donné :
+			
+			Soit un profil $P_c$.
+			Pour vérifier qu'il est acceptable, il y a $2n$ contraintes à vérifier avec $n$ le nombre d'éléments du profil.
+			Il faut que $P_c[i]\leq D_{c,max}[i]$ et que $P_c[i]\geq D_{c,min}[i]$ avec $i$ allant de $0$ à $n$.
+		\item 
+			Le problème peut s'écrire tel que
+			\begin{align*}
+				\max_x P_c^T*P_f - P_a^T * C\\
+				P_c\geq D_{c,min}\\
+				D_c\leq D_{c,max}\\
+				P_A\leq \Delta_{a,max}\\
+				\sum P_A - \sum P_C \geq 0.
+			\end{align*}
+			Avec $P_A$ les débits fournis aux points d'approvisionnement et avec $D_{A,max}$ les débits maximaux extractibles aux points d'approvisionnement.
+	\end{enumerate}
+
+	\item Améliorations du réseau
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item TODO
+	\end{enumerate}
+	\item Conception d'un réseau optimal
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item TODO
+	\end{enumerate}
 \end{enumerate}
 \end{document}
