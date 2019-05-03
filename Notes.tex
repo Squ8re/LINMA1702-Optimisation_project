@@ -5,8 +5,21 @@
 \usepackage[a4paper]{geometry}
 \usepackage{babel}
 \begin{document}
-\section{Données}
-Le débit d'eau qui s'écoule dans une conduite est donné par l'expression $$\alpha\theta_c\frac{R^2_c\Delta h_c}{L_c}$$.
+\title{Notes et infos}
+\maketitle
+\section{Ce qui coule de source}
+\subsection{Hypothèses}
+\begin{itemize}
+	\item
+		L'extraction, la consommation et la circulation de l'eau s'effectue à débit constant.
+	\item
+		Le débit d'eau extrait aux sources est suffisant pour alimenter toutes les conduites.
+\end{itemize}
+\subsection{Données}
+Le débit d'eau qui s'écoule dans une conduite est donné par l'expression $$\alpha\theta_c\frac{R^2_c\Delta h_c}{L_c}.$$
+
+En plus des données fournies, on aura $L_c$ la longueur de la conduite et $\Theta_c$, un paramètre ajustable entre 0 et 1 représentant une valve.
+
 Données fournies :
 \begin{itemize}
 	\item 
@@ -20,6 +33,12 @@ Données fournies :
 		Constante de proportionnalité ($\alpha$ dans l'équation).
 	\item
 		Débits maximaux extractibles aux points d'approvisionnement (notons le $D_(c,max)$).
+	\item 
+		Le coût des débits d'extraction.
+	\item 
+		Les valeurs minimales et maximales du débit en chaque point de consommation.
+	\item 
+		Le prix facturé aux différents points de consommation.
 \end{itemize}
 \section{Réponses}
 \begin{enumerate}
