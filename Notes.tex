@@ -1,0 +1,92 @@
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+\usepackage{babel}
+\usepackage{enumitem}		% Liste enchainée
+\usepackage{amsmath}		% Math
+\usepackage{amssymb}		% Math
+\begin{document}
+\title{Notes et infos}
+\author{DAVID Amadéo}
+\maketitle
+\section{Ce qui coule de source}
+\subsection{Hypothèses}
+\begin{itemize}
+	\item
+		L'extraction, la consommation et la circulation de l'eau s'effectue à débit constant.
+	\item
+		Le débit d'eau extrait aux sources est suffisant pour alimenter toutes les conduites.
+\end{itemize}
+\subsection{Données}
+Le débit d'eau qui s'écoule dans une conduite est donné par l'expression $$\alpha\theta_c\frac{R^2_c\Delta h_c}{L_c}.$$
+
+En plus des données fournies, on aura $L_c$ la longueur de la conduite et $\Theta_c$, un paramètre ajustable entre 0 et 1 représentant une valve.
+
+Données fournies :
+\begin{itemize}
+	\item 
+		Coordonnées en $(x,y,z)$ des points d'approvisionnement et de consommation ($z$ vaut $\Delta h_c$ dans l'équation).
+	\item 
+		Matrice d'incidence des conduites.
+		Il semble que les points intermédiaires aient une somme de 0, les points d'approvisionnement aient une somme de -1 et les points de consommation aient une somme de 1.
+	\item
+		Rayon des conduites ($R_c$ dans l'équation).
+	\item
+		Constante de proportionnalité ($\alpha$ dans l'équation).
+	\item
+		Débits maximaux extractibles aux points d'approvisionnement.
+	\item 
+		Le coût des débits d'extraction.
+	\item 
+		Les valeurs minimales (notées $D_{c,min}$) et maximales (notées $D_{c,max}$) du débit en chaque point de consommation.
+	\item 
+		Le prix facturé aux différents points de consommation.
+	\item 
+		La matrice d'incidence des points de consommation n'est pas fournie mais peut être calculée facilement et est notée $A_c$.
+\end{itemize}
+
+\section{Réponses}
+\begin{enumerate}
+	\item Analyse d'un réseau existant
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item 
+			L'expression $A^T h$ représente les dénivelés entre les conduites.
+			L'expression $Af$ représente elle le débit total aux noeuds.
+			Notons que $Af$ a comme contrainte d'être plus petit ou égal à $D_{c,max}$ et plus grand ou égal à $D_{c,min}$.
+		\item 
+			Démonstration :
+			
+			Un ensemble est défini comme polyèdre si et seulement si c'est un sous ensemble de $R^n$ qui peut être défini comme l'intersection d'un nombre fini de demi-espace de $R^n$. Autrement dit $$P=\left[x \in R^n |Ax\geq b\right].$$
+			
+			Dans notre cas, l'ensemble $P$ peut être vu comme l'intersection des deux demi-espaces $P_c\geq D_{c,min}$ et $P_c\leq D_{c,max}$.
+			Cet ensemble est donc bien un polyèdre.
+			
+			Vérification d'un profil donné :
+			
+			Soit un profil $P_c$.
+			Pour vérifier qu'il est acceptable, il y a $2n$ contraintes à vérifier avec $n$ le nombre d'éléments du profil.
+			Il faut que $P_c[i]\leq D_{c,max}[i]$ et que $P_c[i]\geq D_{c,min}[i]$ avec $i$ allant de $0$ à $n$.
+		\item 
+			Le problème peut s'écrire tel que
+			\begin{align*}
+				\max_x P_c^T*P_f - P_a^T * C\\
+				P_c\geq D_{c,min}\\
+				D_c\leq D_{c,max}\\
+				P_A\leq \Delta_{a,max}\\
+				\sum P_A - \sum P_C \geq 0.
+			\end{align*}
+			Avec $P_A$ les débits fournis aux points d'approvisionnement et avec $D_{A,max}$ les débits maximaux extractibles aux points d'approvisionnement.
+	\end{enumerate}
+
+	\item Améliorations du réseau
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item TODO
+	\end{enumerate}
+	\item Conception d'un réseau optimal
+	\begin{enumerate}[label=\theenumi.\arabic*]
+		\item TODO
+	\end{enumerate}
+\end{enumerate}
+\end{document}
