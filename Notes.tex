@@ -60,19 +60,19 @@ Données fournies :
 			
 			Un ensemble est défini comme polyèdre si et seulement si c'est un sous ensemble de $R^n$ qui peut être défini comme l'intersection d'un nombre fini de demi-espace de $R^n$. Autrement dit $$P=\left[x \in R^n |Ax\geq b\right].$$
 			
-			Dans notre cas, l'ensemble $P$ peut être vu comme l'intersection des deux demi-espaces $P_c\geq D_{c,min}$ et $P_c\leq D_{c,max}$.
+			Dans notre cas, l'ensemble $P$ peut être vu comme l'intersection des deux demi-espaces $D_c\geq D_{c,min}$ et $D_c\leq D_{c,max}$.
 			Cet ensemble est donc bien un polyèdre.
 			
 			Vérification d'un profil donné :
 			
-			Soit un profil $P_c$.
+			Soit un profil $D_c$.
 			Pour vérifier qu'il est acceptable, il y a $2n$ contraintes à vérifier avec $n$ le nombre d'éléments du profil.
-			Il faut que $P_c[i]\leq D_{c,max}[i]$ et que $P_c[i]\geq D_{c,min}[i]$ avec $i$ allant de $0$ à $n$.
+			Il faut que $D_c[i]\leq D_{c,max}[i]$ et que $D_c[i]\geq D_{c,min}[i]$ avec $i$ allant de $0$ à $n$.
 		\item 
 			Le problème peut s'écrire tel que
 			\begin{align*}
-				\max_x P_c^T*P_f - P_a^T * C\\
-				P_c\geq D_{c,min}\\
+				\max_x D_c^T*P_f - P_a^T * C\\
+				D_c\geq D_{c,min}\\
 				D_c\leq D_{c,max}\\
 				P_A\leq \Delta_{a,max}\\
 				\sum P_A - \sum P_C \geq 0.
