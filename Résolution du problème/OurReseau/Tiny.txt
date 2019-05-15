@@ -1,0 +1,28 @@
+4 points
+3 conduites
+
+Coordonnées des n points(x,y,z=hauteur), unités = km
+1 1 2
+2 1 1
+3 2 0
+3 1 0
+
+Matrice d'incidence A des conduites
+-1 0 0
+1 -1 -1
+0 1 0
+0 0 1
+
+Constante alpha = 1 (en mètre/heure)
+Rayons des conduites = 1 mètre (tous égaux)
+
+Points d'approvisionnement  = [1]
+Débit maximaux extractibles = [3] (en m^3/h)
+Coûts d'extraction          = [0.5] (en euros par m^3/h)
+
+Points de consommation        = [3 4]
+Débits minimaux consommables  = [1 1]
+Débits maximaux consommables  = [1.5 1]
+Prix facturé                  = 1 (en euros par m^3/h, prix identique pour tous les points de consommation)
+
+Points intérmédiaires       = Tous les autres points (càd [2])
