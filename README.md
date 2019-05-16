@@ -1,10 +1,13 @@
 # Projet d'optimisation - cours EPL (LINMA1702)
 École Polytechnique de Louvain - Université Catholique de Louvain
+
 LINMA1702 Modèles et méthodes d'optimisation I
+
 Année académique 2018-2019 
 
 ## Professeurs et assistants : 
 Prof. F. Glineur 
+
 Emilie Renard 
 
 Ce répertoire contient tous les documents relatifs au projet de BAC 2 2018-2019 d'optimisation de Marine Van Renterghem, Sylvie Van Schendel et Amadéo DAVID. Le projet n'est pas sous license.
