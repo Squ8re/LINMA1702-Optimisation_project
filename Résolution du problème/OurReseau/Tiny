@@ -13,16 +13,16 @@ Matrice d'incidence A des conduites
 0 1 0
 0 0 1
 
-Constante alpha = 1 (en mètre/heure)
+Constante alpha = 10^6 (en mètre/heure)
 Rayons des conduites = 1 mètre (tous égaux)
 
 Points d'approvisionnement  = [1]
 Débit maximaux extractibles = [3] (en m^3/h)
-Coûts d'extraction          = [0.5] (en euros par m^3/h)
+Coûts d'extraction          = [0.2] (en euros par m^3/h)
 
 Points de consommation        = [3 4]
 Débits minimaux consommables  = [1 1]
 Débits maximaux consommables  = [1.5 1]
-Prix facturé                  = 1 (en euros par m^3/h, prix identique pour tous les points de consommation)
+Prix facturé                  = 0.9 (en euros par m^3/h, prix identique pour tous les points de consommation)
 
 Points intérmédiaires       = Tous les autres points (càd [2])
